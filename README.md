@@ -6,6 +6,12 @@
 
 > A modern, componentized, and highly accessible architectural proposal designed specifically to resolve Submitty **Issue #12431**.
 
+---
+
+### 🌟 [**Click Here to View the Interactive Live Demo!**](https://faqeeh23.github.io/Error-Message-Banners-Fix/) 🌟
+
+---
+
 ## 🎯 Overview
 
 Submitty relies heavily on system message banners (Warnings, Errors, Success, Info) to communicate critical information to students and instructors. Historically, these banners have lacked a standardized style, often relying on purely colored hardcoded containers that are inconsistent across pages.
