@@ -1,3 +1,26 @@
+<script setup>
+import { computed } from 'vue';
+import { Info, CheckCircle, AlertTriangle, XCircle } from 'lucide-vue-next';
+
+const props = defineProps({
+  type: { 
+    type: String, 
+    default: 'info',
+    validator: (value) => ['info', 'success', 'warning', 'error'].includes(value)
+  }
+});
+
+const iconComponent = computed(() => {
+  const icons = {
+    info: Info,
+    success: CheckCircle,
+    warning: AlertTriangle,
+    error: XCircle
+  };
+  return icons[props.type];
+});
+</script>
+
 <template>
   <div 
     :class="['submitty-alert', `alert-${type}`]" 
@@ -21,35 +44,121 @@
         <slot></slot>
       </div>
     </div>
-
-    <!-- Close button -->
-    <button aria-label="Dismiss alert" @click="$emit('close')" class="close-btn ml-4 mt-1 flex-shrink-0 opacity-50 hover:opacity-100 transition-all duration-200 p-1 rounded-full hover:bg-black/5 dark:hover:bg-white/10">
-      <X class="w-5 h-5" />
-    </button>
   </div>
 </template>
 
-<script setup>
-import { computed } from 'vue';
-import { Info, CheckCircle, AlertTriangle, XCircle, X } from 'lucide-vue-next';
+<style scoped>
+.submitty-alert {
+  display: flex;
+  align-items: flex-start;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-radius: 12px;
+  border-left-width: 5px;
+  border-left-style: solid;
+  /* Premium Glassmorphism & Depth */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
 
-const props = defineProps({
-  type: { 
-    type: String, 
-    default: 'info',
-    validator: (value) => ['info', 'success', 'warning', 'error'].includes(value)
-  }
-});
+/* Hover elevation effect */
+.submitty-alert:hover {
+  transform: translateY(-2px);
+}
 
-defineEmits(['close']);
+.alert-info {
+  background-color: rgba(0, 114, 178, 0.08);
+  border-left-color: #0072B2;
+  color: #003a5c;
+}
+.alert-info .icon-circle {
+  background-color: rgba(0, 114, 178, 0.1);
+  color: #0072B2;
+}
+.alert-info .alert-type-label { color: #0072B2; }
 
-const iconComponent = computed(() => {
-  const icons = {
-    info: Info,
-    success: CheckCircle,
-    warning: AlertTriangle,
-    error: XCircle
-  };
-  return icons[props.type];
-});
-</script>
+.alert-success {
+  background-color: rgba(0, 158, 115, 0.08);
+  border-left-color: #009E73;
+  color: #00523b;
+}
+.alert-success .icon-circle {
+  background-color: rgba(0, 158, 115, 0.1);
+  color: #009E73;
+}
+.alert-success .alert-type-label { color: #009E73; }
+
+.alert-warning {
+  background-color: rgba(230, 159, 0, 0.08);
+  border-left-color: #d98200;
+  color: #7a4f00;
+}
+.alert-warning .icon-circle {
+  background-color: rgba(230, 159, 0, 0.1);
+  color: #d98200;
+}
+.alert-warning .alert-type-label { color: #d98200; }
+
+.alert-error {
+  background-color: rgba(185, 28, 28, 0.08);
+  border-left-color: #991b1b;
+  color: #450a0a;
+}
+.alert-error .icon-circle {
+  background-color: rgba(213, 94, 0, 0.1);
+  color: #b91c1c;
+}
+.alert-error .alert-type-label { color: #b91c1c; }
+
+/* Dark Mode Overrides (High Contrast) */
+:global(.dark) .alert-info {
+  background-color: rgba(0, 114, 178, 0.15);
+  border-left-color: #56B4E9;
+  color: #e6f4fc;
+}
+:global(.dark) .alert-info .icon-circle {
+  color: #56B4E9;
+}
+:global(.dark) .alert-info .alert-type-label {
+  color: #56B4E9;
+}
+
+:global(.dark) .alert-success {
+  background-color: rgba(0, 158, 115, 0.15);
+  border-left-color: #009E73;
+  color: #d9f2e6;
+}
+:global(.dark) .alert-success .icon-circle {
+  color: #4ade80;
+}
+:global(.dark) .alert-success .alert-type-label {
+  color: #4ade80;
+}
+
+:global(.dark) .alert-warning {
+  background-color: rgba(230, 159, 0, 0.15);
+  border-left-color: #F0E442;
+  color: #fef8cc;
+}
+:global(.dark) .alert-warning .icon-circle {
+  color: #F0E442;
+}
+:global(.dark) .alert-warning .alert-type-label {
+  color: #F0E442;
+}
+
+:global(.dark) .alert-error {
+  background-color: rgba(220, 38, 38, 0.15);
+  border-left-color: #dc2626;
+  color: #fecaca;
+}
+:global(.dark) .alert-error .icon-circle {
+  color: #ef4444;
+}
+:global(.dark) .alert-error .alert-type-label {
+  color: #ef4444;
+}
+</style>

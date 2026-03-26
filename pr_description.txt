@@ -1,0 +1,27 @@
+### Why is this Change Important & Necessary?
+Closes #12431
+
+Submitty relies on message banners (Warnings, Errors, Success, Info) to relay critical information. Historically, these messages lacked a standardized style, often relying purely on colored containers with inconsistent typography and contrast globally. This change introduces a reliable, accessible, and easily reusable architecture for all system notifications.
+
+### What is the New Behavior?
+This PR introduces a highly reusable Vue.js component (`SubmittyAlert.vue`) and integrates it closely with Submitty's global stylesheets.
+
+- **Componentized & Content-Agnostic**: It uses a standard `<slot>` wrapper allowing it to support any dynamic content while enforcing standard UI (via the `type` prop).
+- **Submitty Setup**: All structural classes have been moved directly to `server.css`, and semantic theme values have been mapped directly to `colors.css`, fulfilling the issue's structural request and supporting instant Light/Dark mode toggling.
+- **Colorblind-Safe Accessibility**: Colors are strictly utilizing the Okabe-Ito colorblind-safe palette (e.g., Deep dark reds for errors, high-contrast golden-yellows for warnings) rather than default hex values.
+- **Explicit Labels & Screen Readers**: Banners no longer force users to rely solely on color. The component integrates `aria-live="polite"`, `sr-only` labels, and dynamic high-contrast Icon topography.
+
+🌟 **Live Interactive Demo:**
+You can interact with and test this exact UI/UX implementation live (showing legacy vs proposed comparisons) right here:
+https://faqeeh23.github.io/Error-Message-Banners-Fix/
+
+### What steps should a reviewer take to reproduce or test the bug or new feature?
+1. Review the component structure inside the Vue components folder.
+2. Verify the globally mapped styles inside the `server` and `colors` css files.
+3. Interact with the live demo provided above (including testing the Dark Mode toggle) to verify the CSS handles responsive themes correctly without breaking contrast limits.
+
+### Automated Testing & Documentation
+This is a UI/UX structural implementation and component addition. It does not negatively alter existing backend tests. If this PoC is approved, we can open follow-up issues to systematically replace legacy `div` nodes across `.twig` templates utilizing this new global component.
+
+### Other information
+This is a non-breaking structural UI addition. It requires no database migrations and presents no security concerns.
