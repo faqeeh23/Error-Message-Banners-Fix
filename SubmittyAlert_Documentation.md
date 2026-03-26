@@ -13,7 +13,7 @@ Submitty relies on alert banners to relay critical information to users. To ensu
 
 The `SubmittyAlert.vue` component completely decouples alert business logic from raw HTML structures. It dynamically adjusts borders, semantic icons, and accessibility tags based on a single `type` property.
 
-All underlying aesthetic values—including Okabe-Ito colorblind-safe palettes and glassmorphism properties—are globally maintained in `server.css` and `colors.css`.
+All underlying aesthetic values—including Okabe-Ito colorblind-safe palettes and glassmorphism properties—are maintained directly within the component's scoped styles.
 
 ## 📦 How to Use
 
@@ -43,7 +43,7 @@ The component accepts a `type` string prop. If omitted, it gracefully defaults t
 3. **`success`** (Bluish Green): Used to confirm successful submissions or saved settings.
 4. **`info`** (Classic Blue): Used for neutral announcements (e.g., Office Hours queues).
 
-*Note: The actual hex codes mapped to these types are strictly derived from the WCAG AA Colorblind-safe palette defined in `colors.css`.*
+*Note: The actual hex codes mapped to these types are strictly derived from the WCAG AA Colorblind-safe palette defined in the component's scoped styles.*
 
 ## 💎 Advanced Features
 
@@ -54,19 +54,6 @@ You are not restricted to plain text. The inner `<slot>` wrapper allows you to i
 <SubmittyAlert type="error">
   <p>Your grade for this assignment will be recorded as a zero.</p>
   <a href="/extensions" class="btn">Request a Deadline Extension</a>
-</SubmittyAlert>
-```
-
-### 2. Event Emissions (`@close`)
-The component handles its own dismiss button (the "X" icon), but it does not aggressively mutate the DOM. Instead, it emits a `@close` event. Bind this event to your parent state manager to properly destroy or hide the banner:
-
-```html
-<SubmittyAlert 
-  v-if="isWarningVisible" 
-  type="warning" 
-  @close="isWarningVisible = false"
->
-  This message will safely dismiss when clicked.
 </SubmittyAlert>
 ```
 
