@@ -72,18 +72,18 @@ const iconComponent = computed(() => {
 .alert-info {
   background-color: rgba(0, 114, 178, 0.08);
   border-left-color: #0072B2;
-  color: #048fe0;
+  color: #93d6fd;
 }
 .alert-info .icon-circle {
   background-color: rgba(0, 114, 178, 0.1);
   color: #0072B2;
 }
-.alert-info .alert-type-label { color: #0072B2; }
+.alert-info .alert-type-label { color: #57c2ff; }
 
 .alert-success {
   background-color: rgba(0, 158, 115, 0.08);
   border-left-color: #009E73;
-  color: #029e72;
+  color: #8fffdf;
 }
 .alert-success .icon-circle {
   background-color: rgba(0, 158, 115, 0.1);
@@ -94,7 +94,7 @@ const iconComponent = computed(() => {
 .alert-warning {
   background-color: rgba(230, 159, 0, 0.08);
   border-left-color: #d98200;
-  color: #de9204;
+  color: #ffd587;
 }
 .alert-warning .icon-circle {
   background-color: rgba(230, 159, 0, 0.1);
@@ -105,7 +105,7 @@ const iconComponent = computed(() => {
 .alert-error {
   background-color: rgba(185, 28, 28, 0.08);
   border-left-color: #991b1b;
-  color: #ea0202;
+  color: #ffa8a8;
 }
 .alert-error .icon-circle {
   background-color: rgba(213, 94, 0, 0.1);

@@ -1,4 +1,4 @@
-### Why is this Change Important & Necessary?
+Title: [Refactor:UI] Standardize Alert Banners
 Closes #12431
 
 Submitty relies on message banners (Warnings, Errors, Success, Info) to relay critical information. Historically, these messages lacked a standardized style, often relying purely on colored containers with inconsistent typography and contrast globally. This change introduces a reliable, accessible, and easily reusable architecture for all system notifications.
