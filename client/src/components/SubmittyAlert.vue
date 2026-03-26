@@ -114,51 +114,51 @@ const iconComponent = computed(() => {
 .alert-error .alert-type-label { color: #b91c1c; }
 
 /* Dark Mode Overrides (High Contrast) */
-:global(.dark) .alert-info {
+:global([class~="dark"]) .alert-info {
   background-color: rgba(0, 114, 178, 0.15);
   border-left-color: #56B4E9;
   color: #e6f4fc;
 }
-:global(.dark) .alert-info .icon-circle {
+:global([class~="dark"]) .alert-info .icon-circle {
   color: #56B4E9;
 }
-:global(.dark) .alert-info .alert-type-label {
+:global([class~="dark"]) .alert-info .alert-type-label {
   color: #56B4E9;
 }
 
-:global(.dark) .alert-success {
+:global([class~="dark"]) .alert-success {
   background-color: rgba(0, 158, 115, 0.15);
   border-left-color: #009E73;
   color: #d9f2e6;
 }
-:global(.dark) .alert-success .icon-circle {
+:global([class~="dark"]) .alert-success .icon-circle {
   color: #4ade80;
 }
-:global(.dark) .alert-success .alert-type-label {
+:global([class~="dark"]) .alert-success .alert-type-label {
   color: #4ade80;
 }
 
-:global(.dark) .alert-warning {
+:global([class~="dark"]) .alert-warning {
   background-color: rgba(230, 159, 0, 0.15);
   border-left-color: #F0E442;
   color: #fef8cc;
 }
-:global(.dark) .alert-warning .icon-circle {
+:global([class~="dark"]) .alert-warning .icon-circle {
   color: #F0E442;
 }
-:global(.dark) .alert-warning .alert-type-label {
+:global([class~="dark"]) .alert-warning .alert-type-label {
   color: #F0E442;
 }
 
-:global(.dark) .alert-error {
+:global([class~="dark"]) .alert-error {
   background-color: rgba(220, 38, 38, 0.15);
   border-left-color: #dc2626;
   color: #fecaca;
 }
-:global(.dark) .alert-error .icon-circle {
+:global([class~="dark"]) .alert-error .icon-circle {
   color: #ef4444;
 }
-:global(.dark) .alert-error .alert-type-label {
+:global([class~="dark"]) .alert-error .alert-type-label {
   color: #ef4444;
 }
 </style>
