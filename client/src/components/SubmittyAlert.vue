@@ -37,7 +37,7 @@ const iconComponent = computed(() => {
     
     <div class="alert-content flex-grow flex flex-col justify-center">
       <!-- Explicit Textual Prefix for extreme accessibility/colorblind support -->
-      <span class="text-xs font-bold uppercase tracking-wider mb-1 opacity-80 alert-type-label">
+      <span class="text-xs font-bold uppercase tracking-wider mb-1 alert-type-label">
         {{ type }}
       </span>
       <div class="alert-body text-sm md:text-base leading-relaxed">
@@ -117,7 +117,7 @@ const iconComponent = computed(() => {
 :global([class~="dark"]) .alert-info {
   background-color: rgba(0, 114, 178, 0.15);
   border-left-color: #56B4E9;
-  color: #e6f4fc;
+  color: #f8fafc;
 }
 :global([class~="dark"]) .alert-info .icon-circle {
   color: #56B4E9;
@@ -129,7 +129,7 @@ const iconComponent = computed(() => {
 :global([class~="dark"]) .alert-success {
   background-color: rgba(0, 158, 115, 0.15);
   border-left-color: #009E73;
-  color: #d9f2e6;
+  color: #f8fafc;
 }
 :global([class~="dark"]) .alert-success .icon-circle {
   color: #4ade80;
@@ -141,7 +141,7 @@ const iconComponent = computed(() => {
 :global([class~="dark"]) .alert-warning {
   background-color: rgba(230, 159, 0, 0.15);
   border-left-color: #F0E442;
-  color: #fef8cc;
+  color: #f8fafc;
 }
 :global([class~="dark"]) .alert-warning .icon-circle {
   color: #F0E442;
@@ -153,7 +153,7 @@ const iconComponent = computed(() => {
 :global([class~="dark"]) .alert-error {
   background-color: rgba(220, 38, 38, 0.15);
   border-left-color: #dc2626;
-  color: #fecaca;
+  color: #f8fafc;
 }
 :global([class~="dark"]) .alert-error .icon-circle {
   color: #ef4444;
