@@ -113,52 +113,55 @@ const iconComponent = computed(() => {
 }
 .alert-error .alert-type-label { color: #b91c1c; }
 
+</style>
+
+<style>
 /* Dark Mode Overrides (High Contrast) */
-:global([class~="dark"]) .alert-info {
+html.dark .submitty-alert.alert-info {
   background-color: rgba(0, 114, 178, 0.15);
   border-left-color: #56B4E9;
-  color: #f8fafc;
+  color: #ffffff;
 }
-:global([class~="dark"]) .alert-info .icon-circle {
+html.dark .submitty-alert.alert-info .icon-circle {
   color: #56B4E9;
 }
-:global([class~="dark"]) .alert-info .alert-type-label {
+html.dark .submitty-alert.alert-info .alert-type-label {
   color: #56B4E9;
 }
 
-:global([class~="dark"]) .alert-success {
+html.dark .submitty-alert.alert-success {
   background-color: rgba(0, 158, 115, 0.15);
   border-left-color: #009E73;
-  color: #f8fafc;
+  color: #ffffff;
 }
-:global([class~="dark"]) .alert-success .icon-circle {
+html.dark .submitty-alert.alert-success .icon-circle {
   color: #4ade80;
 }
-:global([class~="dark"]) .alert-success .alert-type-label {
+html.dark .submitty-alert.alert-success .alert-type-label {
   color: #4ade80;
 }
 
-:global([class~="dark"]) .alert-warning {
+html.dark .submitty-alert.alert-warning {
   background-color: rgba(230, 159, 0, 0.15);
   border-left-color: #F0E442;
-  color: #f8fafc;
+  color: #ffffff;
 }
-:global([class~="dark"]) .alert-warning .icon-circle {
+html.dark .submitty-alert.alert-warning .icon-circle {
   color: #F0E442;
 }
-:global([class~="dark"]) .alert-warning .alert-type-label {
+html.dark .submitty-alert.alert-warning .alert-type-label {
   color: #F0E442;
 }
 
-:global([class~="dark"]) .alert-error {
+html.dark .submitty-alert.alert-error {
   background-color: rgba(220, 38, 38, 0.15);
   border-left-color: #dc2626;
-  color: #f8fafc;
+  color: #ffffff;
 }
-:global([class~="dark"]) .alert-error .icon-circle {
+html.dark .submitty-alert.alert-error .icon-circle {
   color: #ef4444;
 }
-:global([class~="dark"]) .alert-error .alert-type-label {
+html.dark .submitty-alert.alert-error .alert-type-label {
   color: #ef4444;
 }
 </style>
