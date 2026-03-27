@@ -1,9 +1,6 @@
 @import "tailwindcss";
 @variant dark (&:where(.dark, .dark *));
 
-@import "./colors.css";
-@import "./server.css";
-
 /* Base styles for the banner comparison */
 :root {
   font-family: 'Outfit', 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -23,32 +20,25 @@ body {
   min-height: 100vh;
 }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-}
-
 /* Old Submitty UI Example Classes */
 .old-banner {
   padding: 20px;
   margin-bottom: 20px;
   font-family: Arial, sans-serif;
-  border: 1px solid #000;
+  border: 1px solid rgb(0 0 0);
 }
 
 .old-error {
   background-color: #d9534f;
-  color: white;
+  color: rgb(255 255 255);
 }
 
 .old-info {
   background-color: #337ab7;
-  color: white;
+  color: rgb(255 255 255);
 }
 
 .old-warning {
   background-color: #fcf8e3;
   color: #8a6d3b;
 }
-
-/* New SubmittyAlert Base Styles (Tailwind handles most, but we can structure some layout here if needed) */

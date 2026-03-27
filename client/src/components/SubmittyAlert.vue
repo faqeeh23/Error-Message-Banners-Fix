@@ -54,110 +54,83 @@ const iconComponent = computed(() => {
   padding: 1.25rem;
   margin-bottom: 1.25rem;
   border-radius: 12px;
-  border-left-width: 5px;
-  border-left-style: solid;
-  /* Premium Glassmorphism & Depth */
+  border-left: 5px solid; 
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
 }
 
-/* Hover elevation effect */
 .submitty-alert:hover {
   transform: translateY(-2px);
 }
 
 .alert-info {
-  background-color: rgba(0, 114, 178, 0.08);
-  border-left-color: #0072B2;
+  background-color: rgb(0 114 178 / 8%);
+  border-left-color: #0072b2;
   color: #93d6fd;
 }
+
 .alert-info .icon-circle {
-  background-color: rgba(0, 114, 178, 0.1);
-  color: #0072B2;
+  background-color: rgb(0 114 178 / 10%);
+  color: #0072b2;
 }
-.alert-info .alert-type-label { color: #57c2ff; }
 
 .alert-success {
-  background-color: rgba(0, 158, 115, 0.08);
-  border-left-color: #009E73;
+  background-color: rgb(0 158 115 / 8%);
+  border-left-color: #009e73;
   color: #8fffdf;
 }
+
 .alert-success .icon-circle {
-  background-color: rgba(0, 158, 115, 0.1);
-  color: #009E73;
+  background-color: rgb(0 158 115 / 10%);
+  color: #009e73;
 }
-.alert-success .alert-type-label { color: #009E73; }
 
 .alert-warning {
-  background-color: rgba(230, 159, 0, 0.08);
+  background-color: rgb(230 159 0 / 8%);
   border-left-color: #d98200;
   color: #ffd587;
 }
+
 .alert-warning .icon-circle {
-  background-color: rgba(230, 159, 0, 0.1);
+  background-color: rgb(230 159 0 / 10%);
   color: #d98200;
 }
-.alert-warning .alert-type-label { color: #d98200; }
 
 .alert-error {
-  background-color: rgba(185, 28, 28, 0.08);
+  background-color: rgb(185 28 28 / 8%);
   border-left-color: #991b1b;
   color: #ffa8a8;
 }
+
 .alert-error .icon-circle {
-  background-color: rgba(213, 94, 0, 0.1);
+  background-color: rgb(213 94 0 / 10%);
   color: #b91c1c;
 }
-.alert-error .alert-type-label { color: #b91c1c; }
-/* Dark Mode Overrides (High Contrast) */
+
+
 :global([class~="dark"]) .alert-info {
-  background-color: rgba(0, 114, 178, 0.15);
-  border-left-color: #56B4E9;
-  color: #ffffff;
-}
-:global([class~="dark"]) .alert-info .icon-circle {
-  color: #56B4E9;
-}
-:global([class~="dark"]) .alert-info .alert-type-label {
-  color: #56B4E9;
+  background-color: rgb(0 114 178 / 15%);
+  border-left-color: #56b4e9;
+  color: #fff;
 }
 
 :global([class~="dark"]) .alert-success {
-  background-color: rgba(0, 158, 115, 0.15);
-  border-left-color: #009E73;
-  color: #ffffff;
-}
-:global([class~="dark"]) .alert-success .icon-circle {
-  color: #4ade80;
-}
-:global([class~="dark"]) .alert-success .alert-type-label {
-  color: #4ade80;
+  background-color: rgb(0 158 115 / 15%);
+  border-left-color: #009e73;
+  color: #fff;
 }
 
 :global([class~="dark"]) .alert-warning {
-  background-color: rgba(230, 159, 0, 0.15);
-  border-left-color: #F0E442;
-  color: #ffffff;
-}
-:global([class~="dark"]) .alert-warning .icon-circle {
-  color: #F0E442;
-}
-:global([class~="dark"]) .alert-warning .alert-type-label {
-  color: #F0E442;
+  background-color: rgb(230 159 0 / 15%);
+  border-left-color: #f0e442;
+  color: #fff;
 }
 
 :global([class~="dark"]) .alert-error {
-  background-color: rgba(220, 38, 38, 0.15);
+  background-color: rgb(220 38 38 / 15%);
   border-left-color: #dc2626;
-  color: #ffffff;
-}
-:global([class~="dark"]) .alert-error .icon-circle {
-  color: #ef4444;
-}
-:global([class~="dark"]) .alert-error .alert-type-label {
-  color: #ef4444;
+  color: #fff;
 }
 </style>
